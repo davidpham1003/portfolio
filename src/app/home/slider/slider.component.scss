@@ -1,0 +1,121 @@
+.profile-background {
+  padding-top: 50px;
+  position: relative;
+}
+.profile {
+    // font-family: "Open Sans", sans-serif;
+  // width: 60%;
+  margin: 0 auto;
+  // position: absolute;
+  // top: 25%;
+  // left: 50%;
+  // transform: translateX(-50%);
+}
+.profile-box {
+  background: rgb(255, 255, 255);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 3px;
+  font-family: "Grandstander", cursive;
+  //   height: 500px;
+
+  .profile-content {
+    padding: 50px;
+    .profile-top {
+      padding-bottom: 30px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid #dedede;
+    }
+    .box-hello {
+      font-family: "Open Sans", sans-serif;
+      margin-bottom: 30px;
+      span {
+        padding: 5px 10px;
+        background-color: #07cb79;
+        position: relative;
+        color: #fff;
+        font-size: 14px;
+        font-weight: 700;
+        &:before {
+          content: "";
+          width: 0;
+          height: 0;
+          top: 100%;
+          right: 15px;
+          position: absolute;
+          border-style: solid;
+          border-width: 5px 5px 0 5px;
+          border-color: #07cb79 transparent transparent transparent;
+        }
+      }
+    }
+    .profile-name {
+      color: rgba(0, 0, 0, 0.8);
+      margin-top: 15px;
+      color: #3d4451;
+
+      h1 {
+        font-weight: 550;
+      }
+      span {
+        font-weight: 300;
+        color: rgba(0, 0, 0, 0.6);
+      }
+      p {
+        font-size: 18px;
+        font-weight: 500;
+      }
+    }
+    .item-profile {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
+  .profile-social {
+    background-color: #07cb79;
+    padding: 15px 0;
+    a {
+      color: white;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    .social-item {
+      width: 50px;
+      margin: 0 30px;
+      text-align: center;
+      transition: all 0.5s;
+      border-radius: 50%;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+      }
+    }
+    i {
+      font-size: 25px;
+      line-height: 50px;
+      display: block;
+    }
+  }
+}
+.profile-about {
+  text-align: center;
+
+  .btn-download {
+    padding: 40px;
+    span {
+      cursor: pointer;
+      font-weight: 700;
+      padding: 15px 20px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+      transition: all 0.5s;
+      &:hover {
+        background: white;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 3px 10px 2px;
+      }
+    }
+  }
+  .about-content {
+    letter-spacing: 1px;
+    font-size: 18px;
+  }
+}
