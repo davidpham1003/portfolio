@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-slider',
@@ -6,10 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
+  currentHeight:number;
+  @HostListener('window:scroll')
 
+  onWindowScroll(){
+    this.currentHeight = window.pageYOffset;
+    console.log( this.currentHeight)
+  }
   constructor() { }
 
   ngOnInit(): void {
+    this.currentHeight = window.pageYOffset;
   }
 
 }

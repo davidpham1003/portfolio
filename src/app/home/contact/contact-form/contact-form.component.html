@@ -1,0 +1,50 @@
+<form method="post" [formGroup]='formContact' (ngSubmit)="submit(formContact.value)" class="contactForm" action="php/contact_form.php" method="post">
+    <div class="input-field used">
+        <input class="contact-name" type="text" name="name" formControlName='name'>
+        <span class="line"></span>
+        <label>Name</label>
+        <div *ngIf="formContact.get('name').invalid 
+        && (formContact.get('name').dirty ||formContact.get('name').touched) ">
+            <div *ngIf="formContact.get('name').errors['required']" 
+            class="small text-danger m-1">
+                * Name is required.
+            </div>
+        </div>
+    </div>
+    <div class="input-field used">
+        <input class="contact-email" type="email" name="email" formControlName='email'>
+        <span class="line"></span>
+        <label>Email</label>
+        <div *ngIf="formContact.get('email').invalid 
+        && (formContact.get('email').dirty ||formContact.get('email').touched) ">
+            <div *ngIf="formContact.get('email').errors['required']" 
+            class="small text-danger ">
+                * Email is required.
+            </div>
+            <div *ngIf="formContact.get('email').errors['pattern']" 
+            class="small text-danger ">
+                * Email invalidate.
+            </div>
+        </div>
+    </div>
+    <div class="input-field">
+        <input class="contact-subject" type="text" name="subject"  formControlName='sub'>
+        <span class="line"></span>
+        <label>Subject</label>
+    </div>
+    <div class="input-field">
+        <textarea class="contact-message" rows="4" name="message" formControlName='mess'></textarea>
+        <span class="line"></span>
+        <label>Message</label>
+        <div *ngIf="formContact.get('mess').invalid 
+    && (formContact.get('mess').dirty ||formContact.get('mess').touched) ">
+        <div *ngIf="formContact.get('mess').errors['required']" 
+        class="small text-danger ">
+            * Message is required.
+        </div>
+    </div>
+    </div>
+    <span class="btn-outer btn-primary-outer ripple">
+        <input class="contact-submit" type="submit" value="Send">
+    </span>
+</form>

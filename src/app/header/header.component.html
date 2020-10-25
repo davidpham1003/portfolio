@@ -1,38 +1,38 @@
-<header>
-    <div class="header-bg"></div>
+<header [ngClass]='{"header-fixed":currentHeight > 80}'>
+    <div class="header-bg" [ngClass]='{"header-project":content =="project"}'></div>
     <nav class="nav-content navbar navbar-expand-sm  ">
         <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
+            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">HOME</a>
-                    <span  class="border-nav"></span>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">ABOUT</a>
+                <li class="nav-item active" [ngClass]='{"active":content == "home"}' (click)="content = 'home'">
+                    <a class="nav-link" routerLink=''>HOME</a>
                     <span class="border-nav"></span>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">SKILLS</a>
+                <li class="nav-item" [ngClass]='{"active":content == "about"}' (click)="content = 'about'">
+                    <a class="nav-link" href="#slider">ABOUT</a>
                     <span class="border-nav"></span>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">EXPERIENCES</a>
+                <li class="nav-item" [ngClass]='{"active":content == "skills"}' (click)="content = 'skills'">
+                    <a class="nav-link" href="#skills">SKILLS</a>
                     <span class="border-nav"></span>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">PROJECTS</a>
+                <li class="nav-item" [ngClass]='{"active":content == "exp"}' (click)="content = 'exp'">
+                    <a class="nav-link" href="#exp-edu">EXPERIENCES</a>
                     <span class="border-nav"></span>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">CONTACT</a>
+                <li class="nav-item" [ngClass]='{"active":content == "project"}' (click)="content = 'project'">
+                    <a class="nav-link" href="#project" routerLink='/project'>PROJECTS</a>
                     <span class="border-nav"></span>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item" [ngClass]='{"active":content == "contact"}' (click)="content = 'contact'">
+                    <a class="nav-link" href="#contact">CONTACT</a>
+                    <span class="border-nav"></span>
+                </li>
+                <li class="nav-item" [ngClass]='{"active":content == "button"}' (click)="content = 'button'">
                     <a class="nav-link" href="#">BUTTON</a>
                 </li>
             </ul>

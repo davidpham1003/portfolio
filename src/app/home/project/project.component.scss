@@ -3,52 +3,7 @@
   .project-content {
     padding: 30px;
   }
-  .project-item {
-    .project-body {
-      background-color: white;
-      box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 3px;
-      .body-top:hover {
-        // background-color: rgb(235, 235, 235);
-      }
-      .body-footer {
-        font-size: 18px;
-        padding-left: 25px;
-      }
-    }
-    .title {
-      color: #07cb79;
-      font-weight: 600;
-      font-size: 18px;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    .fw {
-      color: rgba(0, 0, 0, 0.6);
-      font-weight: 600;
-      font-size: 15px;
-    }
-    .icon {
-      i {
-        cursor: pointer;
-        font-size: 20px;
-        color: black;
-        width: 50px;
-        line-height: 50px;
-        border-radius: 50%;
-        transition: all 0.5s;
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.2);
-          width: 50px;
-          height: 50px;
-          border-radius: 50%;
-        }
-        &.show {
-          transform: rotate(180deg);
-        }
-      }
-    }
-  }
+  
 }
 //slick
 ::ng-deep .slick-arrow::before {

@@ -1,0 +1,32 @@
+<div class="project-item mx-3">
+    <div class="project-img">
+        <img [src]="projectItem.img" class="avatar" alt="">
+        <img [src]="projectItem.imgLogo" alt="" class="logo">
+        <div class="bg-img"></div>
+        <div class="btn-project">
+            <span routerLink="/project/{{projectItem.code}}">Xem Chi Tiết</span>
+        </div>
+    </div>
+    <div class="project-body pt-2">
+        <div class="body-top">
+            <p class="title pt-1 px-4">{{projectItem.title}}</p>
+            <p class="fw p-1">{{projectItem.fw}}</p>
+        </div>
+        <div class="icon  d-flex justify-content-center p-2">
+            <div class="icon-left">
+                <i class="fab mx-1 fa-github-alt"></i>
+                <i class="fab mx-1 fa-youtube"></i>
+            </div>
+            <div class="arrow ml-auto mx-1">
+                <i [ngClass]='{"show":isShowDes}' (click)="isShowDes = !isShowDes"
+                    class="fas fa-chevron-down" data-toggle="collapse"
+                    [attr.data-target]="'#'+index"></i>
+            </div>
+        </div>
+        <div 
+             class="body-footer text-left  pb-2 collapse"
+            [id]="index">
+            <p class="des">{{projectItem.des}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,23 @@
+<div class="my-project text-center">
+    <div class="box-project">
+        <p>PROJECT</p>
+    </div>
+    <div class=" row">
+        <div class=" col-8 project-left">
+            <div class="content py-4 px-2 row">
+                <ng-container *ngFor='let projectItem of projects;let index = index'>
+                    <div class="col-6 p-3">
+                        <app-project-item [index]=index [projectItem]=projectItem></app-project-item>
+                    </div>
+
+                </ng-container>
+            </div>
+        </div>
+        <div class=" col-4 project-right">
+            <div class="content p-4">         
+                  <h4 class="mb-4">CONTACT ME</h4>   
+                  <app-contact-form></app-contact-form>
+            </div>
+        </div>
+    </div>
+</div>

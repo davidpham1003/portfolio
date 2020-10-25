@@ -1,0 +1,98 @@
+.project-item {
+  .project-img {
+    position: relative;
+    .avatar{
+        box-shadow: rgba(0, 0, 0, 0.8) 0 3px 5px 0px;
+       
+    }
+    .logo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      width: 55px;
+    }
+    .bg-img {
+      position: absolute;
+      top: 0;
+      background: black;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: all 0.5s;
+    }
+    &:hover .bg-img {
+      opacity: 0.8;
+    }
+    .btn-project {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0;
+      transition: all 0.5s;
+      span {
+        cursor: pointer;
+        transition: all 0.3s;
+        font-weight: 600;
+        color: white;
+        padding: 10px 10px;
+        border: rgba(255, 255, 255, 0.8) solid 2px;
+      }
+    }
+    &:hover .btn-project {
+      opacity: 1;
+      transition: all 0.5s;
+      & span:hover {
+        color: black;
+        background: white;
+        box-shadow: rgba(255, 255, 255, 0.5) 0 3px 10px 0px;
+      }
+    }
+  }
+  .project-body {
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 3px;
+    .body-top:hover {
+      // background-color: rgb(235, 235, 235);
+    }
+    .body-footer {
+      font-size: 18px;
+      padding-left: 25px;
+    }
+  }
+  .title {
+    color: #07cb79;
+    font-weight: 600;
+    font-size: 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  .fw {
+    color: rgba(0, 0, 0, 0.6);
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .icon {
+    i {
+      cursor: pointer;
+      font-size: 20px;
+      color: black;
+      width: 50px;
+      line-height: 50px;
+      border-radius: 50%;
+      transition: all 0.5s;
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.2);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+      &.show {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

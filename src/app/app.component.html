@@ -1,4 +1,12 @@
-<app-header></app-header>
-<div class="container">
-    <router-outlet></router-outlet>
+<div *ngIf="isShow">
+    <app-header></app-header>
+    <div *ngIf="currentHeight > 80" class="bg-trans">
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+    <app-footer></app-footer>
+</div>
+<div *ngIf='!isShow'>
+   <img src="../assets/img/bg-profile.jpg" alt="">
 </div>

@@ -11,10 +11,6 @@ export class ProjectComponent implements OnInit {
   projects: any[];
   indexProject: number;
   constructor(private project: ProjectService) {}
-  showDes(value) {
-    this.isShowDes = !this.isShowDes;
-    this.indexProject = value
-  }
   slideConfig = {
     slidesToShow: 4,
     slidesToScroll: 2,

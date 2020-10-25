@@ -1,0 +1,43 @@
+.my-project{
+    position: relative;
+    h4{
+        color: #07cb79;
+        font-weight: 500;
+    }
+}
+.box-project{
+    background-color: #07cb79;
+    height: 80px;
+    width: 80px;
+    position: sticky;
+    transform: translate(-90%, 100px);
+    top: 30px;
+    left: -70px;
+    z-index: 10;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.2);
+    transition: all 1s;
+    cursor: pointer;
+    &:hover{
+        transition: all 3s;
+        transform:translate(-90%, 100px) rotate(-360deg);
+    }
+   
+    p{
+        padding: 5px;
+        
+        color: white;
+        font-weight: 600;
+        font-size: 15px;
+        text-shadow: 1px 1px 4px black;
+        animation: fade 1s;
+        text-overflow: ellipsis;
+    overflow: hidden;
+        @keyframes fade {
+            from{opacity: 0;}
+            to{opacity: 1;}
+        }
+    }
+}
