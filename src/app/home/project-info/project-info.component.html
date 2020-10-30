@@ -1,16 +1,24 @@
-<div class="info-project pb-5 text-center">
-    <div class="box-project">
-        <p>{{projectInfo.title}}</p>
+<div class=" info-project pb-5 text-center" appTheme>
+    <ul class="project_xs d-lg-none d-flex  mt-sm-4 mt-1 mb-sm-5 mb-3 ">
+        <li [ngClass]='{"space":titleItem == " "}' *ngFor='let titleItem of arrayTitle;let index = index' 
+        class="wow fadeInRight" [attr.data-wow-delay]="'.'+ index +'s'">{{titleItem | uppercase}}</li>
+
+    </ul>
+    <div class="d-none d-lg-flex box-project">
+        <span>{{projectInfo.title}}</span>
     </div>
     <div class=" row">
-        <div class="pl-0 col-8 project-left">
+        <div class="pl-0 col-12 col-md-8 project-left ">
             <div class="content">
-                <div class="project-video ">
-                    <iframe width="100%" height="400" [src]="projectInfo.url | safeUrl" frameborder="0"
+                <div *ngIf="projectInfo.youtube;else projectImg" class="project-video wow fadeIn">
+                    <iframe width="100%" height="100%" [src]="projectInfo.youtube | safeUrl" frameborder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen></iframe>
                 </div>
-                <div class="info-iconHead d-flex justify-content-center m-3">
+                <ng-template #projectImg>
+                    <img style="height:'500px'" class=" wow fadeIn" [src]="projectInfo.img" alt="">
+                </ng-template>
+                <div class=" wow fadeIn info-iconHead d-flex justify-content-center m-3">
                     <a href="project/{{projectInfo.code}}#comment" class="info-iconItem mx-3">
                         <i class="fas fa-comments mx-2"></i>
                         <span>{{commentArray.length}}</span>
@@ -22,43 +30,70 @@
                     </div>
                 </div>
 
-                <div class="info-about mt-2 px-3">
-                    <div class="info-section text-left my-2">
+                <div class="info-about mt-2 px-3  wow fadeIn">
+                    <div class=" info-section text-md-left my-2">
                         <span class=" content p-2">Project Infomation</span>
                     </div>
-
-                    <div class="info-title row  mt-1  ">
-                        <strong class="col-6 text-right">Project Name</strong>
-                        <span class="col-6 text-left"> {{projectInfo.title}}</span>
-                    </div>
-                    <div class="info-fw row mt-1">
-                        <strong class="col-6 text-right">ProJect Framework</strong>
-                        <span class="col-6 text-left">{{projectInfo.fw}}</span>
-                    </div>
-                    <div class="info-des row mt-1">
-                        <strong class="col-6 text-right">ProJect Describe</strong>
-                        <span class="col-6 text-left"> {{projectInfo.des}}</span>
-                    </div>
-                    <div class="info-use row mt-1">
-                        <strong class="col-6 text-right"> Support Tool</strong>
-                        <span class="col-6 text-left"> {{projectInfo.use}}</span>
+                    <div class="info-about-content " data-wow-delay=".1s">
+                        <div class="info-use row mt-2 mb-3">
+                            <div class=" col-12 text-center"><strong class="project-time">{{projectInfo.time}}</strong> </div>
+                        </div>
+                        <div class=" info-title row  mt-2  ">
+                            <strong class="col-4 text-right">Project Name</strong>
+                            <span class="col-8 text-left"> {{projectInfo.title}}</span>
+                        </div>
+                        <div *ngIf='projectInfo.link' class=" info-title row  mt-2  ">
+                            <strong class="col-4 text-right">Link website</strong>
+                            <a [href]='projectInfo.link ' target="_blank" class="col-8 text-left"> {{projectInfo.link}}</a>
+                        </div>
+                        <div class="info-fw row mt-2">
+                            <strong class="col-4 text-right">Project Framework</strong>
+                            <span class="col-8 text-left">{{projectInfo.fw}}</span>
+                        </div>
+                        <div class="info-des row mt-2">
+                            <strong class="col-4 text-right">Project Describe</strong>
+                            <span class="col-8 text-left"> {{projectInfo.des}}</span>
+                        </div>
+                        <div class="info-fw row mt-2">
+                            <strong class="col-4 text-right">Member</strong>
+                            <span class="col-8 text-left">{{projectInfo.member}}</span>
+                        </div>
+                        <div class="info-fw row mt-2">
+                            <strong class="col-4 text-right">Position</strong>
+                            <span class="col-8 text-left">{{projectInfo.position}}</span>
+                        </div>
+                        <div class="info-fw row mt-2">
+                            <strong class="col-4 text-right">Role</strong>
+                            <span class="col-8 text-left">
+                                <li *ngFor="let item of projectInfo.role">{{item}}</li>
+                            </span>
+                        </div>
+                        
+                        <div class="info-use row mt-2">
+                            <strong class="col-4 text-right"> Technology</strong>
+                            <span class="col-8 text-left"> {{projectInfo.use}}</span>
+                        </div>
+                        
                     </div>
                 </div>
 
                 <div class="info-func mt-2 px-3 ">
-                    <div class="info-section text-right my-2">
+                    <div class="info-section text-md-right my-2 wow fadeIn">
                         <span class=" content p-2">Project Functions</span>
                     </div>
-                    <ng-container *ngIf="projectInfo.funcs;else updating">
-                        <div class="func-item row mb-2" *ngFor="let funcItem of projectInfo.funcs">
-                            <strong class="col-2 text-right">{{funcItem.name}}</strong>
-                            <div class="func-des col-10 text-left">
-                                {{funcItem.desFunc}}
+                    <ng-container *ngIf="projectInfo.funcs;else updating  ">
+                        <div class="func-item row mb-2 wow fadeIn" *ngFor="let funcItem of projectInfo.funcs">
+                            <strong *ngIf='funcItem.name' class="col-12 text-md-left my-2"><span class="func-name ">{{funcItem.name}}</span></strong>
+                            <div class=" func-des  col-12 text-left">
+                                <li *ngFor='let item of funcItem.desFunc' class="my-1 row">
+                                    <strong  class="col-4 text-right">{{item.name}}</strong>
+                                    <div class="col-8 text-left">{{item.use}}</div>
+                                </li>
                             </div>
                         </div>
                     </ng-container>
                     <ng-template #updating>
-                        <div class="func-item mb-2 ">
+                        <div class="func-item mb-2 wow fadeIn ">
                             <h1 class="text-center updating">Updating .... </h1>
                         </div>
                     </ng-template>
@@ -129,7 +164,7 @@
                     </form>
                     <div class="comment-content text-left">
                         <div *ngFor="let commentItem of commentArray;let index = index"
-                            class="my-3 p-2 content comment-item">
+                            [ngClass]="{'fadeIn':index == 0}" class="wow  my-3 p-2 content comment-item">
                             <div class="comment-head d-flex">
                                 <div class="name-comment ">
                                     <p>{{commentItem.name}}</p>
@@ -147,35 +182,35 @@
                 </div>
                 <ul class="iconFoot d-flex justify-content-center">
                     <li class="social-item">
-                        <a href="#">
+                        <a target="_blank" href="https://www.facebook.com/ku.mit.50">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </li>
                     <li class="social-item">
-                        <a href="#">
+                        <a target="_blank" href="https://twitter.com/PhmQUangLng2">
                             <i class="fab fa-twitter"></i>
                         </a>
                     </li>
                     <li class="social-item">
-                        <a href="#">
+                        <a target="_blank" [href]="projectInfo.git">
                             <i class="fab fa-github-alt"></i>
                         </a>
                     </li>
                     <li class="social-item">
-                        <a href="#">
+                        <a target="_blank" href="https://www.linkedin.com/in/l%C6%B0%C6%A1ng-ph%E1%BA%A1m-3067ab1ba/">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
                     </li>
                     <li class="social-item">
-                        <a href="#">
+                        <a target="_blank" href="https://www.instagram.com/blackjack1002/">
                             <i class="fab fa-instagram-square"></i>
                         </a>
                     </li>
                 </ul>
             </div>
         </div>
-        <div class=" col-4 project-right pl-4 ">
-            <div class="content project-avatar project-hover  ">
+        <div class=" col-md-4 col-12 project-right  ">
+            <div class=" content project-avatar project-hover wow fadeIn" data-wow-delay="0">
                 <div class="img-project">
                     <img [src]="projectInfo.img" alt="">
                 </div>
@@ -183,15 +218,15 @@
                     <img src="assets/img/avatar.jpg" alt="">
                 </div>
             </div>
-            <div class="content p-4 my-4 project-hover ">
+            <div class="content p-4 my-4 project-hover wow fadeIn " data-wow-delay=".2s">
                 <h4 class="mb-4">PROJECT LIST</h4>
                 <ul class="project-list">
                     <li *ngFor="let listItem of projectList" class="list-item pb-3">
-                        <span routerLink='/project/{{listItem.code}}'> {{listItem.title}}</span>
+                        <span (click)="changeRouter(listItem.code)"> {{listItem.title}}</span>
                     </li>
                 </ul>
             </div>
-            <div class="content p-4 my-4 project-hover ">
+            <div class="content p-4 my-4 project-hover wow fadeIn " data-wow-delay=".4s">
                 <h4 class="mb-4">CONTACT ME</h4>
                 <app-contact-form></app-contact-form>
             </div>

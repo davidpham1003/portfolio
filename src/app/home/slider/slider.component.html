@@ -1,13 +1,13 @@
-<div class="profile-background section" id="slider">
+<div class="profile-background section fadeIn wow" appTheme id="slider" [ngClass]="{'slider2':currentHeight > 80}">
     <div class="profile">
         <div class="profile-box content">
             <div class="profile-content row">
-                <div class="col-5 profile-left">
+                <div class="col-sm-5 col-12 profile-left">
                     <div class="profile-img">
                         <img src="assets/img/avatar.jpg" alt="">
                     </div>
                 </div>
-                <div class="profile-right col-7">
+                <div class="profile-right col-sm-7 col-12">
                     <div class="profile-top">
                         <div class="box-hello">
                             <span>HELLO</span>
@@ -40,27 +40,27 @@
             </div>
             <ul class="profile-social d-flex justify-content-center">
                 <li class="social-item">
-                    <a href="#">
+                    <a target="_blank" href="https://www.facebook.com/ku.mit.50">
                         <i class="fab fa-facebook-f"></i>
                     </a>
                 </li>
                 <li class="social-item">
-                    <a href="#">
+                    <a target="_blank" href="https://twitter.com/PhmQUangLng2">
                         <i class="fab fa-twitter"></i>
                     </a>
                 </li>
                 <li class="social-item">
-                    <a href="#">
+                    <a target="_blank" href="https://github.com/davidpham1003?tab=repositories">
                         <i class="fab fa-github-alt"></i>
                     </a>
                 </li>
                 <li class="social-item">
-                    <a href="#">
+                    <a target="_blank" href="https://www.linkedin.com/in/l%C6%B0%C6%A1ng-ph%E1%BA%A1m-3067ab1ba/">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
                 </li>
                 <li class="social-item">
-                    <a href="#">
+                    <a target="_blank" href="https://www.instagram.com/blackjack1002/">
                         <i class="fab fa-instagram-square"></i>
                     </a>
                 </li>
@@ -68,11 +68,13 @@
         </div>
         <div class="profile-about">
             <div class="btn-download">
-                <a href="assets/file/phamQuangLuong.pdf" download>
+                <a
+                    href="https://doc-0o-8c-docs.googleusercontent.com/docs/securesc/uq7lannv8jvpg7tn53656l8dmsro8jk4/eljrcmjednl0cohjd2vj1j4qie8s31bp/1604079900000/10773992283490670936/10773992283490670936/1fkRAOz3bBmWZK-zlnjUcjdokx9pqAhrP?e=download&authuser=0&nonce=poun6s0jqplhs&user=10773992283490670936&hash=85qhjtjag2jpm1t26e22m6l0h2k2a17r">
                     <span>DOWNLOAD MY CV</span>
                 </a>
             </div>
-            <div class="about-content">
+            <div class="about-content content p-3">
+                <h2 class="title mb-2">Summary</h2>
                 <p class="mb-1">
                     My name is Luong, I am interested in IT and everything in its orbit. Especially Web Development!
                 </p>

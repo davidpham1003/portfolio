@@ -1,8 +1,9 @@
+@import 'main';
 .project-item {
   .project-img {
     position: relative;
     .avatar{
-        box-shadow: rgba(0, 0, 0, 0.8) 0 3px 5px 0px;
+        box-shadow: $boxShadow;
        
     }
     .logo {
@@ -53,19 +54,19 @@
   }
   .project-body {
     background-color: white;
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 3px;
+    box-shadow:$boxShadow;
     .body-top:hover {
       // background-color: rgb(235, 235, 235);
     }
     .body-footer {
-      font-size: 18px;
-      padding-left: 25px;
+      font-size: $font-size3;
+      padding-left: $pad-mar5;
     }
   }
   .title {
-    color: #07cb79;
+    color: var(--color);
     font-weight: 600;
-    font-size: 18px;
+    font-size: $font-size3;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
@@ -73,12 +74,12 @@
   .fw {
     color: rgba(0, 0, 0, 0.6);
     font-weight: 600;
-    font-size: 15px;
+    font-size: $font-size2;
   }
   .icon {
     i {
       cursor: pointer;
-      font-size: 20px;
+      font-size: $font-size4;
       color: black;
       width: 50px;
       line-height: 50px;

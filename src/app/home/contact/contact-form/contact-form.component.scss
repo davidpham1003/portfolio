@@ -1,21 +1,22 @@
+@import 'main';
 .input-field {
     position: relative;
-    margin-bottom: 30px;
+    margin-bottom: $pad-mar6;
     input,
     textarea {
       font-size: 16px;
       line-height: 16px;
-      padding: 10px 0;
+      padding: $pad-mar2 0;
       display: block;
       width: 100%;
       border: none;
       border-bottom: 1px solid #d8d8d8;
       border-radius: 0;
       &:focus ~ label {
-        color: #07cb79;
+        color: var(--color);
         font-weight: 600;
         top: -15px;
-        font-size: 11px;
+        font-size: $font-size1;
       }
       &:focus + .line:before,
       &:focus + .line:after {
@@ -50,14 +51,14 @@
       &.ng-valid + .line {
         &:before,
         &:after {
-          background-color: #07cb79;
+          background-color: var(--color);
         }
       }
       &.ng-touched ~ label {
-        color: #07cb79;
+        color: var(--color);
         font-weight: 600;
         top: -15px;
-        font-size: 11px;
+        font-size: $font-size1;
       }
     }
   
@@ -68,7 +69,7 @@
       &:before,
       &:after {
         content: "";
-        background-color: #07cb79;
+        background-color: var(--color);
         height: 2px;
         width: 0;
         bottom: 0;
@@ -83,7 +84,7 @@
       top: 10px;
       left: 0;
       color: #333;
-      font-size: 14px;
+      font-size: $font-size2;
       line-height: 14px;
       font-weight: 400;
       text-transform: uppercase;
@@ -98,13 +99,13 @@
     .contact-submit {
       cursor: pointer;
 
-      padding: 10px 30px;
-      background-color: #07cb79;
+      padding: $pad-mar2 $pad-mar6;
+      background-color: var(--color);
       border: none;
       border-radius: 3px;
       transition: all 0.3s;
       color: white;
-      font-size: 15px;
+      font-size: $font-size2;
       font-weight: 600;
   
       &:hover,

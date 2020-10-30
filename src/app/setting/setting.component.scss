@@ -1,0 +1,74 @@
+@import "main";
+.content-setting {
+  padding: $pad-mar5 0;
+  position: fixed;
+  top: 200px;
+  left: 0;
+  z-index: 9999;
+  background-color: white;
+  width: 250px;
+  //   height: 500px;
+  box-shadow: $boxShadow;
+  transform: translateX(-250px);
+  transition: all 0.5s;
+  &.show {
+    transform: translateX(0);
+  }
+  .dark-light {
+    font-weight: 600;
+    font-size: $font-size2;
+    padding-bottom: 3px;
+    width: 85%;
+    margin: 0 auto;
+    p {
+      cursor: pointer;
+      text-align: center;
+    }
+    .active {
+      position: relative;
+      &::after {
+        width: 100%;
+        content: "";
+        position: absolute;
+        bottom: -7px;
+        left: 0;
+        height: 3px;
+        background-color: var(--background);
+        width: 100%;
+      }
+    }
+  }
+
+  .color {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .item-color {
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+    @include w-h(60px, 50%, 60px);
+    position: relative;
+    &.active i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      color: white;
+      font-size: $font-size4;
+      transform: translate(-50%, -50%);
+    }
+    // background-color:var(--background);
+  }
+  i.setting {
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    right: 0;
+    transform: translateX(100%);
+    color: rgba(0, 0, 0, 0.6);
+    background-color: white;
+    padding: $pad-mar3;
+    font-size: $font-size5;
+    border-radius: 0 2px 2px 0;
+  }
+}

@@ -1,5 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~angular-notifier/styles";
+@import "~animate.css/animate.css";
+@import 'main';
 html {
   scroll-behavior: smooth;
 }
@@ -37,14 +39,21 @@ ul {
 body {
   background-color: rgb(212, 212, 212);
   font-family: "Open Sans", sans-serif;
+  text-overflow: hidden;
 }
 .section {
-  margin-top: 50px;
+  margin-top: $pad-marHeading;
+  @include for-size(sm){
+    margin-top: 60px;
+  }
+  @include for-size(xs){
+    margin-top:  $pad-mar8;
+  }
 }
 .section-heading {
-  padding-bottom: 30px;
+  padding-bottom: $pad-mar4;
   font-weight: 600;
-  font-size: 35px;
+  font-size: $font-size6;
 }
 .content {
   background-color: white;

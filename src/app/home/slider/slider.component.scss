@@ -1,48 +1,51 @@
-
+@import "main";
 .profile-background {
-  padding-top: 100px;
+  padding-top: 60px;
   position: relative;
+  z-index: 100;
+  @include for-size(md) {
+    padding-top: $pad-mar8;
+    margin-top: 0;
+  }
+
+  // &.slider2{
+  //   padding-top: 170px;
+  // }
 }
 .profile {
-  // font-family: "Open Sans", sans-serif;
-  // width: 60%;
   margin: 0 auto;
-  // position: absolute;
-  // top: 25%;
-  // left: 50%;
-  // transform: translateX(-50%);
-  animation: fade-transs 0.5s;
-  @keyframes fade-transs {
-    from {
-      opacity: 0;
-      transform: translateY(50px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
 }
 .profile-box {
   font-family: "Grandstander", cursive;
-  //   height: 500px;
-
   .profile-content {
-    padding: 50px;
+    padding: $pad-mar8;
+    @include for-size(md) {
+      padding: $pad-mar6;
+    }
+    @include for-size(xs) {
+      padding: $pad-mar2;
+    }
     .profile-top {
-      padding-bottom: 30px;
-      margin-bottom: 30px;
+      padding-bottom: $pad-mar6;
+      margin-bottom: $pad-mar6;
       border-bottom: 1px solid #dedede;
+      @include for-size(lg) {
+        padding-bottom: $pad-mar5;
+        margin-bottom: $pad-mar5;
+      }
     }
     .box-hello {
       font-family: "Open Sans", sans-serif;
-      margin-bottom: 30px;
+      margin-bottom: $pad-mar6;
+      @include for-size(xs) {
+        margin: $pad-mar4 0;
+      }
       span {
         padding: 5px 10px;
-        background-color: #07cb79;
+        background-color: var(--color);
         position: relative;
         color: #fff;
-        font-size: 14px;
+        font-size: $font-size1;
         font-weight: 700;
         &:before {
           content: "";
@@ -53,35 +56,40 @@
           position: absolute;
           border-style: solid;
           border-width: 5px 5px 0 5px;
-          border-color: #07cb79 transparent transparent transparent;
+          border-color: var(--color) transparent transparent transparent;
         }
       }
     }
     .profile-name {
       color: rgba(0, 0, 0, 0.8);
-      margin-top: 15px;
+      margin-top: $pad-mar3;
       color: #3d4451;
-
       h1 {
         font-weight: 550;
+        @include for-size(lg) {
+          font-size: 35px;
+        }
+        @include for-size(xs) {
+          font-size: $font-size6;
+        }
       }
       span {
         font-weight: 300;
         color: rgba(0, 0, 0, 0.6);
       }
       p {
-        font-size: 18px;
+        font-size: $font-size3;
         font-weight: 500;
       }
     }
     .item-profile {
-      margin-top: 10px;
-      margin-bottom: 10px;
+      margin-top: $pad-mar2;
+      margin-bottom: $pad-mar2;
     }
   }
   .profile-social {
-    background-color: #07cb79;
-    padding: 15px 0;
+    background-color: var(--background);
+    padding: $pad-mar3 0;
     a {
       color: white;
 
@@ -90,19 +98,27 @@
       }
     }
     .social-item {
-      width: 50px;
       margin: 0 30px;
       text-align: center;
       transition: all 0.5s;
       border-radius: 50%;
+      @include w-h(50px, null, null, 50px);
+      @include for-size(xs) {
+        @include w-h(40px,null, null, 40px);
+        margin: 0 $pad-mar4;
+      }
       &:hover {
         background-color: rgba(0, 0, 0, 0.2);
       }
     }
     i {
-      font-size: 25px;
       line-height: 50px;
+      font-size: $font-size5;
       display: block;
+      @include for-size(xs) {
+        line-height: 40px;
+        font-size: $font-size4;
+      }
     }
   }
 }
@@ -110,11 +126,11 @@
   text-align: center;
 
   .btn-download {
-    padding: 40px;
+    padding: $pad-mar7;
     span {
       cursor: pointer;
       font-weight: 700;
-      padding: 15px 20px;
+      padding: $pad-mar3 $pad-mar4;
       border: 1px solid rgba(0, 0, 0, 0.2);
       border-radius: 3px;
       transition: all 0.5s;
@@ -123,12 +139,16 @@
         color: black;
 
         background: white;
-        box-shadow: rgba(0, 0, 0, 0.2) 0 3px 10px 2px;
+        box-shadow: $boxShadow;
       }
     }
   }
   .about-content {
     letter-spacing: 1px;
-    font-size: 18px;
+    font-size: $font-size3;
+    .title{
+      color: var(--color);
+      font-weight: 600;
+    }
   }
 }

@@ -1,33 +1,41 @@
+@import "main";
 h1 {
   text-align: center;
 }
-.contact-left,
 .contact-right {
+  @include for-size(sm) {
+    margin-top: $pad-mar6;
+  }
 }
 .content {
-  padding: 50px;
-  max-height:550px;
+  padding: $pad-mar8;
+  max-height: 550px;
+  position: relative;
+  @include for-size(md) {
+    padding: $pad-mar6;
+  }
+  .contact-list {
+    strong {
+      font-size: $font-size4;
+      width: 80px;
+      display: inline-block;
+      line-height: 40px;
+      @include for-size(md) {
+        width: 30px;
+      }
+    }
+    span {
+      letter-spacing: 1px;
+    }
+  }
 }
 h3 {
-  font-size: 24px;
-  margin: 0 0 30px;
+  font-size: $pad-mar5;
+  margin: 0 0 $pad-mar6;
 }
-
-.contact-list {
-  strong {
-    font-size: 20px;
-    width: 80px;
-    display: inline-block;
-    line-height: 40px;
-  }
-  span {
-    letter-spacing: 1px;
-  }
-}
-#map {
+.map {
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -8px;
   width: 100%;
-  height: 100%;
 }

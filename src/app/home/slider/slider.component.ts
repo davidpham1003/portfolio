@@ -11,7 +11,6 @@ export class SliderComponent implements OnInit {
 
   onWindowScroll(){
     this.currentHeight = window.pageYOffset;
-    console.log( this.currentHeight)
   }
   constructor() { }
 

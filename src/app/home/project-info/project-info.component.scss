@@ -1,23 +1,55 @@
 @import "../contact/contact-form/contact-form.component.scss";
 @import "../../project-html/project-html.component.scss";
+@import "main";
 a {
   &:hover {
-    text-decoration:underline;
+    text-decoration: underline;
   }
 }
 .info-project {
+  @include for-size(ll) {
+    width: 90%;
+    margin: 0 auto;
+  }
+  @include for-size(md) {
+    position: relative;
+    z-index: 300;
+  }
+  .project-left,
+  .project-right {
+    @include for-size(sm) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .space {
+    background-color: transparent;
+    height: 0;
+
+    @include for-size(xs) {
+      width: 100%;
+      margin: 0;
+    }
+  }
   .project-video {
     animation: topToBot 1s;
+    height: 400px;
     @keyframes topToBot {
       from {
         opacity: 0;
-        transform: translateY(-100px);
+        transform: translateY(-50px);
       }
       to {
         opacity: 1;
-        transform: translateY();
+        transform: translateY(0);
         box-shadow: none;
       }
+    }
+    @include for-size(lg) {
+      height: 350px;
+    }
+    @include for-size(xs) {
+      height: 300px;
     }
   }
   .info-iconHead {
@@ -32,19 +64,32 @@ a {
   }
   .info-section {
     padding: 30px 0;
-    color: #07cb79;
+    color: var(--color);
     font-weight: 500;
     font-size: 30px;
   }
+  .project-time,
+  .func-name {
+    color: white;
+    background-color: var(--color);
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  .info-func {
+    i {
+      font-size: 8px;
+      color:var(--color);
+    }
+  }
   h4 {
-    color: #07cb79;
+    color: var(--color);
     font-weight: 600;
   }
   .updating {
     color: rgba(0, 0, 0, 0.6);
   }
   .iconFoot {
-    background-color: #07cb79;
+    background-color: var(--color);
     padding: 15px 0;
     a {
       color: white;
@@ -71,7 +116,7 @@ a {
   }
   .comment-content {
     .name-comment {
-      color: #07cb79;
+      color: var(--color);
       font-weight: 600;
       align-self: center;
     }
@@ -86,16 +131,30 @@ a {
   }
 
   .project-right {
+    animation: botToTop 1s;
+    @keyframes botToTop {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
     .project-hover {
       transition: all 0.5s;
-      &:hover, &:focus-within {
+      &:hover,
+      &:focus-within {
         transform: translateY(-10px);
-        box-shadow: #07cb79 0px 0px 3px 0px;
+        box-shadow: var(--color) 0px 0px 3px 0px;
       }
     }
     .project-avatar {
       position: relative;
-
+      @include for-size(sm) {
+        display: none;
+      }
       .img-project {
         clip-path: polygon(0px 0px, 100% 0%, 100% 80%, 0% 100%);
       }
@@ -119,7 +178,7 @@ a {
       span {
         transition: all 0.3s;
         &:hover {
-          color: #07cb79;
+          color: var(--color);
           cursor: pointer;
         }
       }
@@ -150,11 +209,11 @@ a {
   }
   .rating-star input:checked ~ label {
     text-shadow: 0px 0 10px rgba(255, 157, 180, 0.28);
-    color: #07cb79;
+    color: var(--color);
   }
   .rating-star:not(:checked) > label:hover,
   .rating-star:not(:checked) > label:hover ~ label {
-    color: #07cb79;
+    color: var(--color);
   }
   i {
     font-size: 25px;

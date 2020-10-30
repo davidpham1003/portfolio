@@ -11,7 +11,7 @@ export class ExpEduComponent implements OnInit {
   edu:any[]
   content:string ='exp';
   constructor(private expEdu :ExpEduService) { }
-
+ 
   ngOnInit(): void {
     this.exp = this.expEdu.exp; 
     this.edu = this.expEdu.edu;

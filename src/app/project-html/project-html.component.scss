@@ -1,43 +1,119 @@
-.my-project{
-    position: relative;
-    h4{
-        color: #07cb79;
-        font-weight: 500;
+@import "main";
+.my-project {
+  position: relative;
+  z-index: 300;
+  @include for-size(ll) {
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+  .project-left {
+    @include for-size(xs) {
+      position: relative;
+      height: 1580px;
+      overflow: hidden;
+      &.show-full {
+        height: 100%;
+      }
+      .box-shadow {
+        box-shadow: 0px -20px 60px 50px #ffffff;
+        height: 100px;
+        width: 100%;
+        position: absolute;
+        bottom: -100px;
+        left: 0;
+        z-index: 1000;
+      }
     }
+  }
+  .btn-showMore {
+    font-size: $font-size2;
+    font-weight: 600;
+    margin: 0 auto;
+    color: white;
+    span {
+      background-color: var(--color);
+      padding: $pad-mar1 $pad-mar2;
+    }
+  }
+
+  //   @include for-size(md) {
+  //     width: 100%;
+  //     margin: 0 auto;
+  //   }
+  h4 {
+    color: var(--color);
+    font-weight: 500;
+  }
+  .project-right {
+    @include for-size(md) {
+      padding: 0;
+      margin-top: $pad-mar4;
+    }
+  }
 }
-.box-project{
-    background-color: #07cb79;
-    height: 80px;
-    width: 80px;
-    position: sticky;
-    transform: translate(-90%, 100px);
-    top: 30px;
-    left: -70px;
-    z-index: 10;
+.project_xs {
+    position: relative;
     justify-content: center;
-    display: flex;
     align-items: center;
-    box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.2);
-    transition: all 1s;
-    cursor: pointer;
-    &:hover{
-        transition: all 3s;
-        transform:translate(-90%, 100px) rotate(-360deg);
+    color: white;
+    font-weight: 600;
+    flex-wrap: wrap;
+    li {
+      @include w-h(35px, null, 35px);
+      background-color: var(--color);
+      margin: $pad-mar2 $pad-mar1;
     }
-   
-    p{
-        padding: 5px;
-        
-        color: white;
-        font-weight: 600;
-        font-size: 15px;
-        text-shadow: 1px 1px 4px black;
-        animation: fade 1s;
-        text-overflow: ellipsis;
+  }
+.box-project {
+  background-color: var(--color);
+  @include w-h(80px);
+  position: sticky;
+  transform: translate(-90%, 100px);
+  top: 30px;
+  left: 0;
+  z-index: 10;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+  cursor: pointer;
+  @include for-size(sm) {
+    max-width: 60px;
+    @include w-h(60px);
+  }
+  @include for-size(sm) {
+    transform: translate(-70%, 100px);
+  }
+  @include for-size(xs) {
+    transform: translate(-60%, 100px);
+  }
+  &:hover {
+    transition: all 3s;
+    transform: translate(-90%, 100px) rotate(-360deg);
+  }
+
+  span {
+    padding: $pad-mar1;
+    color: white;
+    font-weight: 600;
+    font-size: $font-size2;
+    text-shadow: 1px 1px 4px black;
+    animation: fade 1s;
+    text-overflow: ellipsis;
     overflow: hidden;
-        @keyframes fade {
-            from{opacity: 0;}
-            to{opacity: 1;}
-        }
+    @include for-size(sm) {
+      padding: 0;
+      font-size: $font-size1;
+      word-wrap: break-word;
     }
+    @keyframes fade {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+  }
 }

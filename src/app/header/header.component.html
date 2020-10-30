@@ -1,15 +1,17 @@
-<header [ngClass]='{"header-fixed":currentHeight > 80}'>
-    <div class="header-bg" [ngClass]='{"header-project":content =="project"}'></div>
-    <nav class="nav-content navbar navbar-expand-sm  ">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
-            aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+<header id="header" [ngClass]='{"header-fixed":currentHeight > 80 && currentWidth > 991,"header-responsive":isShow }'>
+
+    <div class="header-bg" [ngClass]='{"header-project":content =="project"}'>
+        <canvas id="pixie"></canvas>
+    </div>
+    <nav class="nav-content navbar navbar-expand-lg  ">
+        <a (click)="content = 'home'" class="navbar-brand"  routerLink=''>RESUME</a>
+        <div (click)="isShow = !isShow"  class="btn-show d-lg-none">
+           <span>MENU</span>
+        </div>
+        <div class=" navbar-collapse nav-menu  " [ngClass]="{'show':isShow}" id="collapsibleNavId">
+            <ul class="navbar-menu navbar-nav ml-auto mt-2 mt-lg-0">
                 <li class="nav-item active" [ngClass]='{"active":content == "home"}' (click)="content = 'home'">
-                    <a class="nav-link" routerLink=''>HOME</a>
+                    <a class="nav-link"     routerLink=''>HOME</a>
                     <span class="border-nav"></span>
                 </li>
                 <li class="nav-item" [ngClass]='{"active":content == "about"}' (click)="content = 'about'">
@@ -25,17 +27,23 @@
                     <span class="border-nav"></span>
                 </li>
                 <li class="nav-item" [ngClass]='{"active":content == "project"}' (click)="content = 'project'">
-                    <a class="nav-link" href="#project" routerLink='/project'>PROJECTS</a>
+                    <a pageScroll href="#header" class="nav-link" routerLink='/project'>PROJECTS  <i class="fas fa-sort-down"></i></a>
+                   
                     <span class="border-nav"></span>
+                    <div class="project-list " [ngClass]='{"content":currentWidth >991}'>
+                        <li routerLink='/project/{{item.code}}' *ngFor='let item of projectList' class="item">
+                            {{item.title}}
+                        </li>
+                    </div>
                 </li>
                 <li class="nav-item" [ngClass]='{"active":content == "contact"}' (click)="content = 'contact'">
                     <a class="nav-link" href="#contact">CONTACT</a>
                     <span class="border-nav"></span>
                 </li>
-                <li class="nav-item" [ngClass]='{"active":content == "button"}' (click)="content = 'button'">
-                    <a class="nav-link" href="#">BUTTON</a>
-                </li>
             </ul>
+            <div class="btn-close d-lg-none" (click)="isShow = false">
+                <i  class="fas fa-times"></i>
+            </div>
         </div>
     </nav>
 </header>

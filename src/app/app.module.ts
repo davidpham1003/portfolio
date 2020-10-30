@@ -16,57 +16,63 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from 'src/environments/environment';
 import { ReactiveFormsModule } from '@angular/forms';
-import { NotifierModule, NotifierOptions } from "angular-notifier";
+import { NotifierModule, NotifierOptions } from 'angular-notifier';
 import { ProjectHtmlComponent } from './project-html/project-html.component';
 import { ContactFormComponent } from './home/contact/contact-form/contact-form.component';
 import { ProjectInfoComponent } from './home/project-info/project-info.component';
 import { PipeModule } from './pipe/pipe.module';
 import { ProjectItemRateComponent } from './home/project-info/project-item-rate/project-item-rate.component';
 import { FooterComponent } from './footer/footer.component';
+import { NgwWowModule } from 'ngx-wow';
+import { ToTopComponent } from './to-top/to-top.component';
+import { NgxPageScrollCoreModule } from 'ngx-page-scroll-core';
+import { NgxPageScrollModule } from 'ngx-page-scroll';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { SettingComponent } from './setting/setting.component';
+import { ThemeDirective } from './services/themes/theme.directive';
 
 const customNotifierOptions: NotifierOptions = {
   position: {
-		horizontal: {
-			position: 'right',
-			distance: 12
-		},
-		vertical: {
-			position: 'bottom',
-			distance: 12,
-			gap: 10
-		}
-	},
+    horizontal: {
+      position: 'right',
+      distance: 12,
+    },
+    vertical: {
+      position: 'bottom',
+      distance: 12,
+      gap: 10,
+    },
+  },
   theme: 'material',
   behaviour: {
     autoHide: 5000,
     onClick: 'hide',
     onMouseover: 'pauseAutoHide',
     showDismissButton: true,
-    stacking: 4
+    stacking: 4,
   },
   animations: {
     enabled: true,
     show: {
       preset: 'slide',
       speed: 300,
-      easing: 'ease'
+      easing: 'ease',
     },
     hide: {
       preset: 'fade',
       speed: 300,
       easing: 'ease',
-      offset: 50
+      offset: 50,
     },
     shift: {
       speed: 300,
-      easing: 'ease'
+      easing: 'ease',
     },
-    overlap: 150
-  }
+    overlap: 150,
+  },
 };
 @NgModule({
   declarations: [
-    
     AppComponent,
     HomeComponent,
     HeaderComponent,
@@ -82,8 +88,15 @@ const customNotifierOptions: NotifierOptions = {
     ProjectInfoComponent,
     ProjectItemRateComponent,
     FooterComponent,
+    ToTopComponent,
+    SettingComponent,
+    ThemeDirective,
   ],
   imports: [
+    NgxPageScrollCoreModule,
+    NgxPageScrollModule,
+    InfiniteScrollModule,
+    NgwWowModule,
     PipeModule,
     NotifierModule.withConfig(customNotifierOptions),
     ReactiveFormsModule,
@@ -91,9 +104,9 @@ const customNotifierOptions: NotifierOptions = {
     AngularFireDatabaseModule,
     BrowserModule,
     AppRoutingModule,
-    SlickCarouselModule
+    SlickCarouselModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

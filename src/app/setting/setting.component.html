@@ -1,0 +1,21 @@
+<div class="setting">
+    <div class="content-setting " [ngClass]="{'show':isShow}">
+        <!-- <div class="dark-light row justify-content-center mb-3 px-3">
+            <p (click)="active = 'light'"
+             [ngClass]="{'active':active == 'light'}"
+              class="col-6 active" >LIGHT</p>
+            <p (click)="active = 'dark'"  
+            [ngClass]="{'active':active == 'dark'}"
+             class="col-6 ">DARK</p>
+        </div> -->
+
+        <div class="color d-flex">
+            <div (click)='toggleTheme(item.name)' class="item-color" [ngClass]="{'active':active == item.name}"
+                [ngStyle]="{'background-color':item.color,'color':item.color}" *ngFor='let item  of arrayTheme'><i
+                    class="fas fa-check"></i></div>
+        </div>
+
+        <i class="fas fa-cog setting" (click)='isShow = !isShow'></i>
+    </div>
+
+</div>

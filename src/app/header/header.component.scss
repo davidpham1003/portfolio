@@ -1,27 +1,100 @@
+@import "main";
 header {
   position: relative;
   width: 100%;
-  z-index: 0;
-  padding: 25px 0;
+  padding: $pad-mar5 0;
+
+  
+  &.header-responsive {
+    .header-bg {
+      z-index: 1;
+    }
+  }
   &.header-fixed {
     position: fixed;
     top: 0;
     left: 0;
     background-color: white;
-    z-index: 100;
-    padding: 10px 0;
-    margin-bottom: 90px;
+    z-index: 400;
+    padding: $pad-mar2 0;
+    margin-bottom: 60px;
+    .btn-show {
+      border: rgba(0, 0, 0, 0.2) solid 1px;
+    }
     .header-bg {
       background: white;
-      height: 60px;
+      box-shadow: $boxShadow;
+      height: 66px;
+      z-index: 0;
+      @include for-size(md) {
+        height: 65px;
+      }
       &.header-project {
-        height: 60px;
+        height: 65px;
+       
       }
     }
-    a{
+    a {
       color: rgba(0, 0, 0, 0.6);
     }
   }
+  .btn-show {
+    color: var(--color);
+    font-weight: 700;
+    border: rgba(255, 255, 255, 0.8) solid 1px;
+    padding: 10px 15px;
+    font-size: $font-size2;
+  }
+  a.navbar-brand {
+    z-index: 400;
+    font-family: "Grandstander", cursive;
+    color: var(--color);
+    font-size: $font-size5;
+  }
+  .nav-menu {
+    z-index: 400;
+    @include for-size(md) {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: 300px;
+      height: 100%;
+      background-color: var(--color);
+      transform: translateX(345px);
+      transition: all 0.5s;
+      .btn-close {
+        z-index: 200;
+        background: white;
+        @include w-h(45px, null, 45px);
+        border-radius: 3px 0 0 3px;
+        position: absolute;
+        left: 0;
+        top: 40px;
+        box-shadow: $boxShadow;
+        text-align: center;
+        font-size: $font-size4;
+        transform: translateX(-100%);
+        &:hover{
+          color: rgb(134, 2, 2);
+        }
+      }
+      .navbar-menu {
+        overflow-y: auto;
+        height: 100vh;
+        @include for-size(md) {
+          margin-top: 0 !important;
+          padding: $pad-mar7 $pad-mar5;
+          box-shadow: $boxShadow;
+          transition: all 0.5s;
+          z-index: 100;
+        }
+      }
+      &.show {
+          transform: translateX(0);
+      }
+    }
+  }
+
   .header-bg {
     background: url("../../assets/img/bg-profile.jpg");
     height: 600px;
@@ -31,8 +104,25 @@ header {
     left: 0;
     transition: all 0.5s;
     z-index: 0;
+    overflow: hidden;
+    background-position: top;
+    #pixie {
+      z-index: 10;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+   
+    }
+    @include for-size(md) {
+      height: 500px;
+    }
     &.header-project {
       height: 100px;
+      background-position: center;
+      @include for-size(md) {
+        height: 400px;
+      }
     }
   }
 
@@ -41,11 +131,18 @@ header {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-size: 14px;
+    @include for-size(md) {
+      color: white ;
+    }
   }
   .nav-content {
     width: 80%;
     margin: 0 auto;
-    padding: 0 15px;
+    padding: 0 $pad-mar3;
+    @include for-size(ll) {
+      width: 100%;
+      padding: 0 $pad-mar5;
+    }
     animation: fade-trans 0.5s;
     @keyframes fade-trans {
       from {
@@ -58,7 +155,58 @@ header {
       }
     }
     .nav-item {
-      margin: 0 10px;
+      position: relative;
+      margin: 0 $pad-mar2;
+      @include for-size(md) {
+        color: white;
+        font-weight: 600;
+        font-size: $font-size5;
+        margin-bottom: 5px;
+      }
+      &:hover{
+        .project-list{
+          opacity: 1;
+          visibility: visible;
+        }
+        i{
+          color: var(--color);
+        }
+      }
+      .project-list{
+        position: absolute;
+        top: 35px;
+        left: 0px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .5s;
+        padding: $pad-mar2;
+        @include for-size(md){
+          opacity: 1;
+          visibility: visible;
+          position: relative;
+          top: 0;
+          font-size: $font-size2;
+          font-weight: 600;
+          padding: 0 $pad-mar2 ;
+        }
+        li{
+          text-overflow: ellipsis;
+          cursor: pointer;
+          white-space: nowrap;
+          padding: $pad-mar1 $pad-mar2;
+          font-weight: 500;
+          &:hover{
+            color: var(--color);
+          }
+          @include for-size(md){
+            color: rgba(255, 255, 255, 0.8);
+            font-weight: 600;
+            &:hover{
+              color: white;
+            }
+          }
+        }
+      }
       .border-nav {
         width: 0;
         transition: all 0.3s;
@@ -67,8 +215,11 @@ header {
       &.active .border-nav {
         width: 100%;
         height: 3px;
-        background-color: #07cb79;
+        background-color: var(--color);
         display: inherit;
+        @include for-size(md) {
+          background-color: white;
+        }
       }
     }
   }

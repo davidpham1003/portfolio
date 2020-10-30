@@ -1,20 +1,21 @@
-<div class="exp-edu text-center section"  id="exp-edu"> 
-    <div class="d-flex justify-content-center">
+<div class="wow fadeIn exp-edu text-center section"  id="exp-edu"> 
+    <div class="d-flex justify-content-center  ">
         <h1 (click)='content = "exp"' [ngClass]="{'active':content == 'exp'}" class="section-heading px-3 active">Experiences</h1>
         <h1 (click)='content = "edu"' [ngClass]="{'active':content == 'edu'}" class="section-heading px-3">Education</h1>
     </div>
     <div class="time-line ">
         <div *ngIf="content == 'exp'"  class="entries exp show">
-            <div *ngFor="let expItem of exp" class="entry">
+            <div *ngFor="let expItem of exp;let index = index" class="entry">
                 <div class="title big">{{expItem.year}}</div>
                 <div class="position my-2">{{expItem.position}} - {{expItem.company}}</div>
-                <div class="body des">
+                <div class="project"><span>Participating projects</span>  - {{expItem.projects}}</div>
+                <div class="my-2 body des">
                     <p>{{expItem.des}}</p>
                 </div>
             </div>
         </div>
         <div *ngIf="content == 'edu'"  class="entries edu show">
-            <div *ngFor="let eduItem of edu" class="entry">
+            <div *ngFor="let eduItem of edu"  class=" entry">
                 <div class="title big">{{eduItem.year}}</div>
                 <div class="position my-2">{{eduItem.position}} - {{eduItem.school}}</div>
                 <div class="body des">

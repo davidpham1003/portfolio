@@ -1,20 +1,20 @@
+@import 'main';
 .project {
   text-align: center;
   .project-content {
-    padding: 30px;
+    padding: $pad-mar6;
+    padding-top: 0;
   }
   
 }
 //slick
 ::ng-deep .slick-arrow::before {
-//   content: "\f105";
-//   font-family: "Font Awesome 5 Free";
-//   border-style: solid;
-//   border-width: 20px 20px 20px 20px;
-//   border-color: transparent #07cb79 transparent transparent;
-  font-size: 40px;
-  color: #07cb79;
+  font-size: $font-size7;
+  color: var(--color);
 }
 ::ng-deep .slick-prev {
   left: -50px;
+  @include for-size(sm){
+    left: -45px;
+  }
 }

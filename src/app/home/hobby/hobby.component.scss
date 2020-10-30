@@ -1,23 +1,38 @@
+@import 'main';
 .hobby {
   text-align: center;
 }
 .hobby-content {
-  padding: 30px 40px;
-  font-size: 18px;
+  padding: $pad-mar6 $pad-mar7;
+  font-size: $font-size3;
   letter-spacing: 1px;
+  @include for-size(sm){
+    padding: $pad-mar6
+  }
   .hobby-icon {
+    flex-wrap: wrap;
     .hobby-item {
       position: relative;
+      @include for-size(sm){
+        padding: $pad-mar2
+      }
     }
     i {
-      margin: 0 15px;
-      width: 70px;
-      height: 70px;
-      line-height: 70px;
-      font-size: 30px;
-      color: #07cb79;
+      margin: 0 $pad-mar3;
+      @include w-h(70px,null,70px);
+      font-size: $font-size6;
+      color: var(--color);
       border: 1px solid rgba(0, 0, 0, 0.2);
       border-radius: 5px;
+      @include for-size(md){
+        @include w-h(50px,null,50px);
+        // width: 50px;
+        // height: 50px;
+        // line-height: 50px;
+      }
+      @include for-size(sm){
+        margin: 0;
+      }
       &:hover {
         animation: shake .5s;
         @keyframes shake {

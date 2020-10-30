@@ -11,7 +11,7 @@ export class ContactService {
     return this.firestore.collection(project).snapshotChanges()
   }
   createComment(content,project){
-    return this.firestore.collection(project).add(content)
+    return this.firestore.collection(project).add(content);
   }
   createContact(content){
     return this.firestore.collection('contact').add(content);

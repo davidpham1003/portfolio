@@ -1,4 +1,20 @@
+@import 'main';
 .bg-trans{
-    height: 90px;
+    height: 100px;
     background-color: transparent;
+}
+.widthContent{
+    @include for-size(md){
+        max-width: 766px;
+    }
+    @include for-size(sm){
+        max-width: 100%;
+    }
+  
+}
+.projectContainer{
+    @include for-size(md){
+        max-width: 100%;
+        padding: 0;
+    }
 }

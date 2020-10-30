@@ -7,6 +7,7 @@ import { ProjectService } from '../services/project.service';
   styleUrls: ['./project-html.component.scss']
 })
 export class ProjectHtmlComponent implements OnInit {
+  isShowFull:boolean;
   projects:any[]
 
   constructor(private dataHeader : ProjectService) { }

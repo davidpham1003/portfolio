@@ -1,10 +1,8 @@
+@import 'main';
 .skills {
   text-align: center;
-  h1{
-      margin-bottom: 30px;
-  }
   .skills-content{
-      padding:  20px 40px;
+      padding:  $pad-mar1 $pad-mar7;
 
   }
 }
@@ -27,7 +25,8 @@
         font-weight: 600;
     }
     .progress-bar{
-        background-color: #07cb79;
+        background-color: var(--color);
+      
     }
     &.progress-item:last-child{
         margin-right: auto;

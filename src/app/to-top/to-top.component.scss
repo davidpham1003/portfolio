@@ -1,0 +1,42 @@
+#button {
+    display: inline-block;
+    background-color: var(--color);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 15%;
+    right: 5vw;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+    &.show-phone{
+      right: 10px;
+    }
+    &.show {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  #button  {
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+ 
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: #007a47;
+  }
+  #button:active {
+    background-color: #008b51;
+  }
+
+  i{
+      font-size: 30px;
+  }
