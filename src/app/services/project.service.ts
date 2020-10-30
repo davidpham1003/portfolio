@@ -160,7 +160,7 @@ export class ProjectService {
       img: '/assets/img/resume.jpg',
 
       link: 'https://contact-resume.web.app/',
-      // youtube: 'https://www.youtube.com/embed/8w_m0rvAVyQ',
+      youtube: 'https://www.youtube.com/embed/rUUSUezowpI',
     },
     {
       code: 'to-do-list',

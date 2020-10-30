@@ -16,10 +16,10 @@ export class SkillsComponent implements OnInit {
   }
   slideConfig = {
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     infinite: true,
-    // autoplay: true,
-    // autoplaySpeed: 3000,
+    autoplay: true,
+    autoplaySpeed: 3000,
     responsive: [
       {
         breakpoint: 1200,

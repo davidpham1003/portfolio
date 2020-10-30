@@ -13,7 +13,7 @@ export class ProjectComponent implements OnInit {
   constructor(private project: ProjectService) {}
   slideConfig = {
     slidesToShow: 4,
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     infinite: false,
     responsive: [
       {

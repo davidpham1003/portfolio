@@ -11,6 +11,7 @@ h1 {
   padding: $pad-mar8;
   max-height: 550px;
   position: relative;
+  overflow: hidden;
   @include for-size(md) {
     padding: $pad-mar6;
   }

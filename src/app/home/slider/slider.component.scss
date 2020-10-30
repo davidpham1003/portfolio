@@ -85,6 +85,9 @@
     .item-profile {
       margin-top: $pad-mar2;
       margin-bottom: $pad-mar2;
+      p{
+        word-wrap: break-word;
+      }
     }
   }
   .profile-social {

@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, HostListener, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ProjectService } from '../services/project.service';
 declare var $:any;
 
@@ -13,7 +14,7 @@ export class HeaderComponent implements OnInit,AfterViewInit {
   currentWidth:number = 0;
   isShow:boolean = false;
   projectList : [] = []
-  constructor(private dataHeader : ProjectService,private project : ProjectService) {}
+  constructor(private activeRoute:ActivatedRoute,private router:Router  ,private dataHeader : ProjectService,private project : ProjectService) {}
   @HostListener('window:resize ')
   onResize(){
     this.currentWidth = window.innerWidth;
@@ -23,6 +24,11 @@ export class HeaderComponent implements OnInit,AfterViewInit {
   onWindowScroll(){
     this.currentHeight = window.pageYOffset;
 
+  }
+  resetComponent(code){
+    this.router.navigateByUrl('/project',{skipLocationChange:true}).then(()=>{
+      this.router.navigateByUrl(`/project/${code}`)
+    })
   }
   ngOnInit(): void {
     this.projectList = this.project.project

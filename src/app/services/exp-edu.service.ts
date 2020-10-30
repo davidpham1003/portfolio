@@ -9,15 +9,14 @@ export class ExpEduService {
       year: '02/2020 - On Going',
       position: 'Freelance',
       company: 'Facebook, ITViec',
-      projects:'Booking Movies, To do list Online, E-learning ..... ,',
+      projects:'volamhoiuc.com, Resume online, ...',
       des: 'Freelance work in the field of website design, discussing and consulting with clients to develop website',
     },
     {
       year: '03/2020 - 11/2020',
       position: 'Intership',
       company: 'Cybersoft Academy',
-      projects:'volamhoiuc.com, resume online .......',
-     
+      projects:'Booking Movies, To do list Online, E-learning, ... ,',
       des: 'Studying and working as an intern at CyberSoft Academy',
     },
     

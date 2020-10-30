@@ -31,7 +31,7 @@
                    
                     <span class="border-nav"></span>
                     <div class="project-list " [ngClass]='{"content":currentWidth >991}'>
-                        <li routerLink='/project/{{item.code}}' *ngFor='let item of projectList' class="item">
+                        <li (click)=resetComponent(item.code)  *ngFor='let item of projectList' class="item">
                             {{item.title}}
                         </li>
                     </div>
